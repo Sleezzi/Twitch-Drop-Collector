@@ -1,0 +1,70 @@
+:root {
+	--bacgkround: #0e1424;
+	--color: #FFF;
+	--main-color: #a425fe35;
+}
+body {
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	background: var(--bacgkround);
+	color: var(--color);
+}
+section {
+	height: calc(100% - 1rem * 2);
+	width: calc(100% - 1rem * 2);
+	padding: 1rem;
+	background: radial-gradient(circle at 50%, var(--main-color) 0, var(--main-color) 2%, transparent 25%);
+	overflow: hidden;
+}
+section#one {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+section#one h1 {
+	font-size: 3rem;
+}
+section#one h2 {
+	font-size: 2rem;
+}
+#download {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--bacgkround);
+	padding: .75rem;
+	color: var(--color);
+	height: 2rem;
+	width: 10rem;
+	font-size: 1.25rem;
+	text-decoration: none;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: width .25s ease;
+	position: relative;
+}
+#download:hover {
+	width: 11rem;
+}
+#download::before {
+	content: "";
+	width: 10rem;
+	height: 1px;
+	background: white;
+	position: absolute;
+	bottom: 1rem;
+	opacity: 0;
+	transition: opacity .5s ease;
+}
+#download::after {
+	content: " ↗";
+	display: none;
+}
+#download:hover::after {
+	display: flex;
+}
+#download:hover::before {
+	opacity: 1;
+}
